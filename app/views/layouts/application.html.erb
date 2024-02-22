@@ -11,9 +11,15 @@
   </head>
 
   <body>
-    <div class="navbar-lewagon"></div>
+
+    <%# import banner %>
+    <%= render "shared/banner" %>
+
     <div class="container p-5">
       <%= yield %>
     </div>
+
+    <%= render "shared/footer" %>
+
   </body>
 </html>

@@ -1,17 +1,20 @@
-<h2> <%= @list.name %> </h2>
+<h2 class=""> <%= @list.name %> </h2>
 <div class="row">
   <% @list.bookmarks.each do |bookmark| %>
-    <div class="card-category mt-5 p-0 col-6 bg-white rounded shadow d-flex flex-column align-items-center justify-content-center">
+    <div class="card-category mt-3 p-0 col-5 bg-white d-flex flex-column align-items-center justify-content-center m-1">
       <img src="<%=bookmark.movie.poster_url%>" alt="movieposter" class="movie-img"/>
-      <div class="py-3">
+      <div class="p-4 d-flex flex-column align-items center justify-content-center">
         <h3> <%= bookmark.movie.title %> </h3>
+        <p> <%= bookmark.movie.overview %> </p>
         <p> "- <%= bookmark.comment %>" </p>
       </div>
-    </img>
+    </div>
   <% end %>
 </div>
-
-<div class="my-5">
-  <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-info" %>
-  <%= link_to "See all lists", lists_path, class: "btn btn-info" %>
+<div class="my-4 d-flex justify-content-begin">
+  <span></span>
+  <div>
+    <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-info" %>
+    <%= link_to "See all lists", lists_path, class: "btn btn-info" %>
+  </div>
 </div>

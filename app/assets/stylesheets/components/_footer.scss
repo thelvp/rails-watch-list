@@ -1,0 +1,26 @@
+.footer {
+  text-align: center;
+  opacity: 0.8;
+}
+
+.footer > .list-inline  {
+  margin: 0 auto;
+}
+
+.list-inline > li {
+  display: inline-block;
+  padding: 0px 10px;
+}
+
+.fa-brands {
+  font-size: 30px;
+  color:  #a3a2a0
+}
+
+.fa-brands:hover {
+  color: #5a1106
+}
+
+.logo {
+  color: #5a1106
+}
