@@ -1,5 +1,13 @@
 <h2>Lists</h2>
 
-<% @lists.each do |list| %>
-  <%= link_to list.name, list, class: "btn btn-info" %>
-<% end %>
+<div class="container">
+  <ul>
+    <% @lists.each do |list| %>
+      <li><%= link_to list.name, list, class: "btn btn-outline-secondary my-2" %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  <%= link_to "Create a list", new_list_path, class: "btn btn-info" %>
+</div>
