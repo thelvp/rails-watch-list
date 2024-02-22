@@ -1,11 +1,11 @@
 <h2>Lists</h2>
 
-<div class="container">
-  <ul>
-    <% @lists.each do |list| %>
-      <li><%= link_to list.name, list, class: "btn btn-outline-secondary my-2" %></li>
-    <% end %>
-  </ul>
+<div class="card-list-container row d-flex justify-content-around align-items-start flex-wrap">
+  <% @lists.each do |list| %>
+    <div class="card-category card-list col-3 my-4">
+      <h5> <%= link_to list.name, list %> </h5>
+    </div>
+  <% end %>
 </div>
 
 <div>

@@ -1,12 +1,12 @@
 <h2 class=""> <%= @list.name %> </h2>
 <div class="row">
   <% @list.bookmarks.each do |bookmark| %>
-    <div class="card-category mt-3 p-0 col-5 bg-white d-flex flex-column align-items-center justify-content-center m-1">
+    <div class="card-category mt-3 p-0 col-4 bg-white d-flex flex-column align-items-center justify-content-between m-1 flex-wrap">
       <img src="<%=bookmark.movie.poster_url%>" alt="movieposter" class="movie-img"/>
       <div class="p-4 d-flex flex-column align-items center justify-content-center">
         <h3> <%= bookmark.movie.title %> </h3>
-        <p> <%= bookmark.movie.overview %> </p>
-        <p> "- <%= bookmark.comment %>" </p>
+        <p style=""> <%= bookmark.movie.overview %> </p>
+        <p style="font-size: smaller"> - "<%= bookmark.comment %>" </p>
       </div>
     </div>
   <% end %>
