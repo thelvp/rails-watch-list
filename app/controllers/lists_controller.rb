@@ -1,7 +1,6 @@
 class ListsController < ApplicationController
 
   before_action :set_list, only: [ :show ]
-  # before_action :set_bookmark, only: [ :show ]
 
   def home
   end
@@ -30,10 +29,6 @@ class ListsController < ApplicationController
   def set_list
     @list = List.find(params[:id])
   end
-
-  # def set_bookmark
-  #   @bookmark = Bookmark.find(params[:id])
-  # end
 
   def list_params
     params.require(:list).permit(:name, :id)
