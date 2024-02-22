@@ -2,6 +2,9 @@ class ListsController < ApplicationController
 
   before_action :set_list, only: [ :show ]
 
+  def home
+  end
+
   def index
     @lists = List.all
   end
