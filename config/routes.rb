@@ -12,8 +12,13 @@ Rails.application.routes.draw do
 
 end
 
-# # Routes
+# -- Routes: lists
 # lists       GET  /lists(.:format)       lists#index
 #             POST /lists(.:format)       lists#create
 # new_list    GET  /lists/new(.:format)   lists#new
 # list        GET  /lists/:id(.:format)
+
+# -- Routes: bookmarks
+
+
+# -- Routes: movies (required?)
