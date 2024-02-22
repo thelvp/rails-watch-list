@@ -1,8 +1,8 @@
 <h2>Lists</h2>
 
-<div class="card-list-container row d-flex justify-content-around align-items-start flex-wrap">
+<div class="card-list-container">
   <% @lists.each do |list| %>
-    <div class="card-category card-list col-3 my-4">
+    <div class="card-list">
       <h5> <%= link_to list.name, list %> </h5>
     </div>
   <% end %>

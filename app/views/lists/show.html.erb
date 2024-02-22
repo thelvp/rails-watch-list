@@ -1,5 +1,7 @@
 <h2 class=""> <%= @list.name %> </h2>
+
 <div class="row">
+
   <% @list.bookmarks.each do |bookmark| %>
     <div class="card-category mt-3 p-0 col-4 bg-white d-flex flex-column align-items-center justify-content-between m-1 flex-wrap">
       <img src="<%=bookmark.movie.poster_url%>" alt="movieposter" class="movie-img"/>
@@ -10,7 +12,9 @@
       </div>
     </div>
   <% end %>
+  
 </div>
+
 <div class="my-4 d-flex justify-content-begin">
   <span></span>
   <div>

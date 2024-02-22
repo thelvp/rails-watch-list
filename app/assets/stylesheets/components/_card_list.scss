@@ -1,20 +1,25 @@
+.card-list-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
+  margin-bottom: 20px;
+}
+
 .card-list {
-  background-size: cover;
+  background-image: url("https://source.unsplash.com/red-cinema-chair-evlkOfkQ5rE");
   background-position: center;
-  background-image: url("https://source.unsplash.com/photography-of-cinema-atsUqIm3wxo");
-  height: 180px;
+  background-size: cover;
+  height: 120px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  flex-wrap: wrap;
+  border-radius: 10px;
 
-  h5, a {
+  a {
     text-decoration: none;
     color: white;
+    text-shadow: 1px 1px 1px black;
   }
 }
