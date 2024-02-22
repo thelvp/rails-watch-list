@@ -13,4 +13,7 @@ Rails.application.routes.draw do
 end
 
 # # Routes
-# lists       GET  /list(:format)         lists#index
+# lists       GET  /lists(.:format)       lists#index
+#             POST /lists(.:format)       lists#create
+# new_list    GET  /lists/new(.:format)   lists#new
+# list        GET  /lists/:id(.:format)

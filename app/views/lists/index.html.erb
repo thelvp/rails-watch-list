@@ -1,7 +1,5 @@
 <h2>Lists</h2>
 
-<ul>
-  <% @lists.each do |list| %>
-    <li> <%= list.name %> </li>
-  <% end %>
-</ul>
+<% @lists.each do |list| %>
+  <%= link_to list.name, list, class: "btn btn-info" %>
+<% end %>
