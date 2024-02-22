@@ -9,17 +9,20 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root to: "lists#home"
-  resources :lists, only: [:index, :show, :new, :create]
+  resources :lists, only: [:index, :show, :new, :create] do
+    resources :bookmarks, only: [:new, :create]
+  end
 
 end
 
 # -- Routes: lists
-# lists       GET  /lists(.:format)       lists#index
-#             POST /lists(.:format)       lists#create
-# new_list    GET  /lists/new(.:format)   lists#new
-# list        GET  /lists/:id(.:format)
+# lists                 GET  /lists(.:format)                         lists#index
+#                       POST /lists(.:format)                         lists#create
+# new_list              GET  /lists/new(.:format)                     lists#new
+# list                  GET  /lists/:id(.:format)
 
 # -- Routes: bookmarks
-
+# list_bookmarks        POST /lists/:list_id/bookmarks(.:format)       bookmarks#create
+# new_list_bookmark     GET  /lists/:list_id/bookmarks/new(.:format)   bookmarks#new
 
 # -- Routes: movies (required?)
