@@ -1,0 +1,10 @@
+<h2>Add a movie</h2>
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.association :movie %>
+  <%= f.input :comment %>
+  <%= f.submit "submit", class: "btn btn-info" %>
+<% end %>
+
+<%# ! List first, cause it's first in URL  %>
+<%# f.association to add movie ID  %>
