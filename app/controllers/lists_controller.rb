@@ -3,10 +3,12 @@ class ListsController < ApplicationController
   before_action :set_list, only: [ :show ]
 
   def home
+    index_lists()
   end
 
   def index
-    @lists = List.all
+    # redirect_to root_path
+    # index_lists()
   end
 
   def show; end
@@ -32,6 +34,10 @@ class ListsController < ApplicationController
 
   def list_params
     params.require(:list).permit(:name, :id)
+  end
+
+  def index_lists
+    @lists = List.all
   end
 
 end
