@@ -1,31 +1,36 @@
 class BookmarksController < ApplicationController
 
+  before_action :set_bookmark, only: [ :destroy ]
   before_action :set_list, only: [ :new, :create ]
 
   def new
     @bookmark = Bookmark.new
-    # Instantialize list, not creating it
-    # @list = List.find(params[:list_id])
   end
 
   def create
     @bookmark = Bookmark.new(bookmark_params)
-    # @list = List.find(params[:list_id])
-    # List set above = list of this bookmark
     @bookmark.list = @list
-
     if @bookmark.save
       redirect_to list_path(@list)
     else
       render :new, status: :unprocessable_entity
     end
+  end
 
+  def destroy
+    # @bookmark.list = @list
+    @bookmark.destroy
+    redirect_to list_path(@bookmark.list)
   end
 
   private
 
   def set_list
     @list = List.find(params[:list_id])
+  end
+
+  def set_bookmark
+    @bookmark = Bookmark.find(params[:id])
   end
 
   def bookmark_params

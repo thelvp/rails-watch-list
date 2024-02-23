@@ -5,10 +5,15 @@
   <% @list.bookmarks.each do |bookmark| %>
     <div class="card-category mt-3 p-0 col-4 bg-white d-flex flex-column align-items-center justify-content-between m-1 flex-wrap">
       <img src="<%=bookmark.movie.poster_url%>" alt="movieposter" class="movie-img"/>
-      <div class="p-4 d-flex flex-column align-items center justify-content-center">
+      <div class="px-4 pt-4 pb-1 d-flex flex-column align-items-center justify-content-center">
         <h3> <%= bookmark.movie.title %> </h3>
         <p style=""> <%= bookmark.movie.overview %> </p>
         <p style="font-size: smaller"> - "<%= bookmark.comment %>" </p>
+      </div>
+      <div class="align-self-end px-2 pb-2">
+        <%= link_to "🗑️",
+        bookmark_path(bookmark),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this?"} %>
       </div>
     </div>
   <% end %>

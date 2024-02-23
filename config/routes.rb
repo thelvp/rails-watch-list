@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     resources :bookmarks, only: [:new, :create]
   end
 
+  resources :bookmarks, only: [ :destroy ]
+
 end
 
 # -- Routes: lists
@@ -24,5 +26,6 @@ end
 # -- Routes: bookmarks
 # list_bookmarks        POST /lists/:list_id/bookmarks(.:format)       bookmarks#create
 # new_list_bookmark     GET  /lists/:list_id/bookmarks/new(.:format)   bookmarks#new
+# list_bookmark         DELETE /lists/:list_id/bookmarks/:id(.:format) bookmarks#destroy
 
 # -- Routes: movies (required?)
