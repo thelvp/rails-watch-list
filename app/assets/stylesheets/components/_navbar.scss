@@ -21,8 +21,13 @@
   margin-left: 40px;
 }
 
+.fa-house:hover {
+  color: $yellow;
+}
+
 .navbar-text {
-  padding-right: 20px;
+  padding-right: 40px;
+  word-spacing: 3px;
 }
 
 .navbar-lvp a {
@@ -31,5 +36,5 @@
 }
 
 .navbar-lvp a:hover {
-  color: darkgoldenrod;
+  color: $yellow;
 }
