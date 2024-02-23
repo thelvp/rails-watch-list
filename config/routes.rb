@@ -9,15 +9,14 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root to: "lists#home"
-  
-  resources :lists, only: [:index, :show, :new, :create] do
+  resources :lists, only: [:show, :new, :create] do
     resources :bookmarks, only: [:new, :create]
   end
 
 end
 
 # -- Routes: lists
-# lists                 GET  /lists(.:format)                         lists#index
+# root                  GET  /                                        lists#home
 #                       POST /lists(.:format)                         lists#create
 # new_list              GET  /lists/new(.:format)                     lists#new
 # list                  GET  /lists/:id(.:format)
