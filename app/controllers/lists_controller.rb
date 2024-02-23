@@ -6,11 +6,6 @@ class ListsController < ApplicationController
     index_lists()
   end
 
-  def index
-    # redirect_to root_path
-    # index_lists()
-  end
-
   def show; end
 
   def new
@@ -33,7 +28,7 @@ class ListsController < ApplicationController
   end
 
   def list_params
-    params.require(:list).permit(:name, :id)
+    params.require(:list).permit( :name, :id, :photo )
   end
 
   def index_lists

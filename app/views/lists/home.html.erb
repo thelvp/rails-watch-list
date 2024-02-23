@@ -1,7 +1,10 @@
 <h2>Lists</h2>
 <div class="card-list-container">
   <% @lists.each do |list| %>
-    <div class="card-list">
+    <div
+    class="card-list card-category"
+    style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= list.photo.attached? ? (cl_image_path list.photo.key, height: 300, crop: :fill) : "https://source.unsplash.com/random/?city,night" %>')"
+    >
       <h5> <%= link_to list.name, list %> </h5>
     </div>
   <% end %>

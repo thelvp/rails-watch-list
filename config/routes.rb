@@ -27,5 +27,3 @@ end
 # list_bookmarks        POST /lists/:list_id/bookmarks(.:format)       bookmarks#create
 # new_list_bookmark     GET  /lists/:list_id/bookmarks/new(.:format)   bookmarks#new
 # list_bookmark         DELETE /lists/:list_id/bookmarks/:id(.:format) bookmarks#destroy
-
-# -- Routes: movies (required?)
