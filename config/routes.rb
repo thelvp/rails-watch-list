@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root to: "lists#home"
-  resources :lists, only: [:show, :new, :create] do
+  resources :lists, only: [:show, :new, :create, :destroy ] do
     resources :bookmarks, only: [:new, :create]
   end
 
@@ -22,8 +22,9 @@ end
 #                       POST /lists(.:format)                         lists#create
 # new_list              GET  /lists/new(.:format)                     lists#new
 # list                  GET  /lists/:id(.:format)
+#                       DELETE /lists/:id(.:format)c                   lists#destroy
 
 # -- Routes: bookmarks
 # list_bookmarks        POST /lists/:list_id/bookmarks(.:format)       bookmarks#create
 # new_list_bookmark     GET  /lists/:list_id/bookmarks/new(.:format)   bookmarks#new
-# list_bookmark         DELETE /lists/:list_id/bookmarks/:id(.:format) bookmarks#destroy
+# bookmark              DELETE /bookmarks/:id(.:format)                bookmarks#destroy

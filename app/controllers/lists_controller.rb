@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
 
-  before_action :set_list, only: [ :show ]
+  before_action :set_list, only: [ :show, :destroy ]
 
   def home
     index_lists()
@@ -19,6 +19,11 @@ class ListsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @list.destroy
+    redirect_to root_path
   end
 
   private
