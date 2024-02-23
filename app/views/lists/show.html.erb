@@ -1,21 +1,31 @@
 <h2 class=""> <%= @list.name %> </h2>
 
-<div class="row">
+<div class="list-container">
+  <div class="row">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="card-category mt-3 p-0 col-4 bg-white d-flex flex-column align-items-center justify-content-between mx-1 flex-wrap">
+        <img src="<%=bookmark.movie.poster_url%>" alt="movieposter" class="movie-img"/>
+        <div class="px-4 pt-4 pb-1 d-flex flex-column align-items-center justify-content-center">
+          <h4> <%= bookmark.movie.title %> </h4>
+          <p style="font-size: smaller"> <%= bookmark.movie.overview %> </p>
+          <p style=""> - "<%= bookmark.comment %>" </p>
+        </div>
+        <div class="align-self-end px-2 pb-2">
+          <%= link_to "🗑️",
+          bookmark_path(bookmark),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete your bookmark?"} %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-  <% @list.bookmarks.each do |bookmark| %>
-    <div class="card-category mt-3 p-0 col-4 bg-white d-flex flex-column align-items-center justify-content-between mx-1 flex-wrap">
-      <img src="<%=bookmark.movie.poster_url%>" alt="movieposter" class="movie-img"/>
-      <div class="px-4 pt-4 pb-1 d-flex flex-column align-items-center justify-content-center">
-        <h4> <%= bookmark.movie.title %> </h4>
-        <p style="font-size: smaller"> <%= bookmark.movie.overview %> </p>
-        <p style=""> - "<%= bookmark.comment %>" </p>
-      </div>
-      <div class="align-self-end px-2 pb-2">
-        <%= link_to "🗑️",
-        bookmark_path(bookmark),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete your bookmark?"} %>
-      </div>
-    </div>
+<div id="bookmark-form" class="row">
+  <h5>Add a movie</h5>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.association :movie %>
+    <%= f.input :comment %>
+    <%= f.submit "Submit", class: "btn btn-light" %>
   <% end %>
 </div>
 

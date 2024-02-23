@@ -6,7 +6,9 @@ class ListsController < ApplicationController
     index_lists()
   end
 
-  def show; end
+  def show
+    @bookmark = Bookmark.new
+  end
 
   def new
     @list = List.new
@@ -33,7 +35,7 @@ class ListsController < ApplicationController
   end
 
   def list_params
-    params.require(:list).permit( :name, :id, :photo )
+    params.require(:list).permit(:name, :id, :photo)
   end
 
   def index_lists
